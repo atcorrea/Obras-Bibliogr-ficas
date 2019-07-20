@@ -8,16 +8,21 @@ namespace GuideTest.Services
 {
     public class RepositoryService : IRepositoryService
     {
-        private readonly AuthorRepository _repo;
+        private readonly IRepository<Author> _repo;
 
-        public RepositoryService(AuthorRepository repo)
+        public RepositoryService(IRepository<Author> repo)
         {
             _repo = repo;
         }
 
-        public List<Author> GetAuthors()
+        public Author DeleteAuthorFromHistory(Author author)
         {
-            throw new NotImplementedException();
+            return _repo.Remove(author);
         }
+
+        public IEnumerable<Author> GetAuthors()
+        {
+            return _repo.GetAll();
+        }        
     }
 }

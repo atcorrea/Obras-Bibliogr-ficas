@@ -5,6 +5,8 @@ namespace GuideTest.Interfaces
 {
     public interface IRepositoryService
     {
-        List<Author> GetAuthors();
+        IEnumerable<Author> GetAuthors();
+
+        Author DeleteAuthorFromHistory(Author author);
     }
 }
