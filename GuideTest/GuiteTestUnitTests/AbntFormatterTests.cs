@@ -1,10 +1,6 @@
-using System;
 using Xunit;
-using System.Linq;
 using FluentAssertions;
-using System.Threading;
-using System.Collections.Generic;
-using System.Text;
+using GuideTest.Utils;
 
 namespace GuiteTestUnitTests
 {
@@ -52,68 +48,5 @@ namespace GuiteTestUnitTests
             var formattedName = AbntFormatter.FormatName(null, 0);
             formattedName.Should().Be(string.Empty);
         }
-    }
-
-    public static class AbntFormatter
-    {
-        public static string FormatName(string nameString, int lnCount)
-        {
-            if (string.IsNullOrEmpty(nameString))
-                return string.Empty;
-
-            if (lnCount == 1)
-                return nameString.ToUpper();
-      
-            var sb = new StringBuilder();
-
-            var names = nameString.ToLower()
-                            .Split(" ")
-                            .Select(x => x.IsInside(new string[] { "da", "de", "do", "das", "dos" }) ? x : x.ToTitleCase())
-                            .ToList();
-
-            var lastName = names.Last();
-            if (lnCount > 2)
-            {
-                if (lastName.IsInside(new string[] { "Filho", "Filha", "Neto", "Neta", "Sobrinho", "Sobrinha", "Junior" } ))
-                {
-                    lastName = $"{names[names.Count - 2]} {names.Last()}";
-                    names.RemoveRange(names.Count - 2, 1);
-                }
-            }
-
-            sb.Append($"{lastName.ToUpper()},");
-            names.RemoveRange(names.Count - 1, 1);
-
-            names.ForEach(x => sb.Append($" {x}"));
-            return sb.ToString().TrimUnusedCharactersEnd();
-        }
-    }
-
-    public static class StringExtensions
-    {        
-        public static string ToTitleCase(this string str)
-        {
-            var tInfo = Thread.CurrentThread.CurrentCulture.TextInfo;
-            return tInfo.ToTitleCase(str);
-        }
-
-        public static string TrimUnusedCharactersEnd(this string str)
-        {
-            str = str.TrimEnd();
-            var last = str.Last();
-
-            if (last == ',')
-                str = str.Substring(0, str.Length - 1);
-
-            return str;
-        }
-    }
-
-    public static class GeneralExtensions
-    {
-        public static bool IsInside<T>(this T str, IList<T> list)
-        {
-            return list.Contains(str);
-        }
-    }
+    } 
 }
