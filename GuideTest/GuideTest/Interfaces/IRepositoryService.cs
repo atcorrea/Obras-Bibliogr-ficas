@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using GuideTest.Models;
 
 namespace GuideTest.Interfaces
@@ -7,6 +8,10 @@ namespace GuideTest.Interfaces
     {
         IEnumerable<Author> GetAuthors();
 
+        Author GetAuthorWhere(Func<Author, bool> predicate);
+
         Author DeleteAuthorFromHistory(Author author);
+
+        Author RegisterNewAuthorInHistory(Author newAuthorHistory);
     }
 }

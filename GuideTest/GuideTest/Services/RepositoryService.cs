@@ -17,12 +17,27 @@ namespace GuideTest.Services
 
         public Author DeleteAuthorFromHistory(Author author)
         {
-            return _repo.Remove(author);
+            var deleted = _repo.Remove(author);
+            _repo.Commit();
+            return deleted;
         }
 
         public IEnumerable<Author> GetAuthors()
         {
             return _repo.GetAll();
-        }        
+        }
+
+        public Author GetAuthorWhere(Func<Author, bool> predicate)
+        {
+            return _repo.GetWhere(predicate);
+        }
+
+        public Author RegisterNewAuthorInHistory(Author newAuthorHistory)
+        {
+            var newAuthor = _repo.Add(newAuthorHistory);
+            _repo.Commit();
+
+            return newAuthor;
+        }
     }
 }
