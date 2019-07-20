@@ -1,0 +1,13 @@
+<div class="jumbotron">
+    <h1 class="display-4">Transforme seu nome em formato ABNT!</h1>
+    <hr class="my-4">
+        <div class="form-group">
+            <label class="col-3 lead" for="name">Nome Completo</label>
+            <div class="row">
+                <input class="form-control col-6" id="name" type="text" [(ngModel)]="info.nameString" required>
+                <button class="btn btn-primary col-1 ml-4" (click)="formatNameInAbnt()" type="button">Enviar!</button>
+            </div>
+        </div>
+    <hr class="my-4">
+    <h3>RESULTADO: {{authorName}}</h3>
+</div>
