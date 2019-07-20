@@ -22,9 +22,7 @@ namespace GuideTest.Controllers
         public IActionResult FormatAuthorName([FromBody] AuthorRequestDto nameInfo)
         {
             var formattedName = AbntFormatter.FormatName(nameInfo.NameString, nameInfo.NameCount);
-            RegisterNewAuthorInHistory(nameInfo, formattedName);
-
-            return new JsonResult(new { Name = formattedName });
+            return Ok(RegisterNewAuthorInHistory(nameInfo, formattedName));
         }
 
         [HttpGet]
@@ -33,14 +31,14 @@ namespace GuideTest.Controllers
             return Ok(_service.GetAuthors().ToList());
         }
 
-        [HttpDelete]
-        public IActionResult DeleteAuthorFromHistory([FromBody] AuthorRequestDto request)
+        [HttpDelete("{id}")]
+        public IActionResult DeleteAuthorFromHistory(int id)
         {
-            var author = _service.GetAuthorWhere(x => x.Id == request.AuthorId);
+            var author = _service.GetAuthorWhere(x => x.Id == id);
             return Ok(_service.DeleteAuthorFromHistory(author));
         }
 
-        private void RegisterNewAuthorInHistory(AuthorRequestDto nameInfo, string formattedName)
+        private Author RegisterNewAuthorInHistory(AuthorRequestDto nameInfo, string formattedName)
         {
             var newAuthorHistory = new Author()
             {
@@ -48,7 +46,7 @@ namespace GuideTest.Controllers
                 AuthorName = formattedName
             };
 
-            _service.RegisterNewAuthorInHistory(newAuthorHistory);
+            return _service.RegisterNewAuthorInHistory(newAuthorHistory);
         }
     }
 }
