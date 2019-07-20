@@ -34,7 +34,7 @@ namespace GuideTest
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(opts => opts.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseMvc();
         }
     }
