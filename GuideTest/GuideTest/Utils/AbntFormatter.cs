@@ -13,9 +13,6 @@ namespace GuideTest.Utils
             if (string.IsNullOrEmpty(nameString))
                 return string.Empty;
 
-            if (lnCount == 1)
-                return nameString.ToUpper();
-
             var sb = new StringBuilder();
 
             var names = nameString.ToLower()
