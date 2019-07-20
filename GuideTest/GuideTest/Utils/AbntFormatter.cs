@@ -1,6 +1,4 @@
 ﻿using GuideTest.Extensions;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -21,7 +19,7 @@ namespace GuideTest.Utils
                             .ToList();
 
             var lastName = names.Last();
-            if (lnCount > 2)
+            if (names.Count > 2)
             {
                 if (lastName.IsInside(new string[] { "Filho", "Filha", "Neto", "Neta", "Sobrinho", "Sobrinha", "Junior" }))
                 {
