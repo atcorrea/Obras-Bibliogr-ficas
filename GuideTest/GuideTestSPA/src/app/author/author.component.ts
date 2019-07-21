@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NameInfo } from './NameInfo';
 import { Author } from './Author';
+import { AuthorService } from '../_services/author-service.service';
 
 
 @Component({
@@ -11,23 +11,23 @@ import { Author } from './Author';
 })
 export class AuthorComponent implements OnInit {
 
+  host = "http://localhost:5000/api/authors"
+
   info: any = {}
   authorName: any
-  host = "http://localhost:5000/api"
 
-  constructor(private client: HttpClient) { }
+  constructor(private client: HttpClient, private service: AuthorService) { }
 
   ngOnInit() {
   }
 
   formatNameInAbnt() {
-    let data = new NameInfo()
+    let data = new Author()
     data.nameString = this.info.nameString
-    data.nameCount = 0
 
-    this.client.post<Author>(this.host + '/author' + '/formatAuthor', data).subscribe((res) => {
-      this.authorName = res.name
-    });
-    
-  }
+    this.client.post<Author>(this.host , data).subscribe((res) => {
+      this.authorName = res.authorName
+      this.service.getAuthors()
+    });    
+  }  
 }

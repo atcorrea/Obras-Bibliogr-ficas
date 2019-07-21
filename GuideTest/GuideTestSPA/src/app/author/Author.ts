@@ -1,3 +1,5 @@
 export class Author {
-    name: string
+    authorName: string
+    nameString: string
+    id: number
 }

@@ -1,0 +1,19 @@
+<hr class="my-3">
+<h5 class="lead">Histórico:</h5>
+
+<table class="table table-light table-striped col-5">
+    <thead class="thead-dark">
+        <tr>
+            <th><span>Nome Recebido</span></th>
+            <th><span>Nome ABNT</span></th>
+            <th><span>Remover</span></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let author of authors">
+            <td><span>{{author.nameString}}</span></td>
+            <td><span>{{author.authorName}}</span></td>
+            <td><button class="btn btn-danger" type="button" (click)="removeAuthorFromHistory(author.id)">Remover</button></td>
+        </tr>
+    </tbody>
+</table>

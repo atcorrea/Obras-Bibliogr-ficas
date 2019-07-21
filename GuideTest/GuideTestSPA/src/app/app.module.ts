@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { AuthorComponent } from './author/author.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthorsListComponent } from './authors-list/authors-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthorComponent
+    AuthorComponent,
+    AuthorsListComponent
   ],
   imports: [
     BrowserModule,
