@@ -20,12 +20,7 @@ namespace GuideTest.Controllers
         [HttpPost]
         public IActionResult FormatAuthorName([FromBody] AuthorRequestDto nameInfo)
         {
-            var newAuthorHistory = new Author()
-            {
-                NameString = nameInfo.NameString
-            };
             var formattedName = Author.FormatName(nameInfo.NameString, nameInfo.NameCount);
-
             return Ok(RegisterNewAuthorInHistory(nameInfo, formattedName));
         }
 
