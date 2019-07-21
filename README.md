@@ -14,8 +14,10 @@
 - .NET Core SDK
 
 ## Execução:
-    - Navegue até o diretório onde o .net está localizado: atráves do comando ['cd ./GuideTest/GuideTest']
+    - Abra uma instância de terminal de linha de comando
+    - Navegue até o diretório onde o .net está localizado: atráves do comando ['cd ./GuideTest/GuideTestAPI']
     - Execute o comando ['dotnet run']
-    - Navegue até o diretório onde o Angular foi instalado: através do comando ['cd ../GuideTestSPA/src/app']
+    - Abra uma nova instância de terminal de linha de comando
+    - Navegue até o diretório onde o Angular foi instalado: através do comando ['cd ./GuideTestSPA/src/app']
     - Execute o comando ['ng serve']
     - Abra o navegador no endereço 'http://localhost:4200'
