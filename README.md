@@ -1,6 +1,6 @@
-#Teste: Transformando nome em ABNT
+# Teste: Transformando nome em ABNT
 
-##Tecnologias utilzadas:
+## Tecnologias utilzadas:
 - .NET Core 2.1:
     - Testes unitários utilizando XUnit com auxílio da lib FluentAssertions.
     - ORM utilizando Entity Framework Core.
@@ -9,11 +9,11 @@
     - npm e bower para instalação de dependências.
     - utilizado bootstrap para estilização.
 
-##Pré-Requistos:
+## Pré-Requistos:
 - Node js
 - .NET Core SDK
 
-##Execução:
+## Execução:
     - Navegue até o diretório onde o .net está localizado: atráves do comando ['cd ./GuideTest/GuideTest']
     - Execute o comando ['dotnet run']
     - Navegue até o diretório onde o Angular foi instalado: através do comando ['cd ../GuideTestSPA/src/app']
