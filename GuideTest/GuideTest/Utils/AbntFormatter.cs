@@ -13,7 +13,7 @@ namespace GuideTest.Utils
 
             var sb = new StringBuilder();
 
-            var names = nameString.ToLower()
+            var names = nameString.Trim().ToLower()
                             .Split(" ")
                             .Select(x => x.IsInside(new string[] { "da", "de", "do", "das", "dos" }) ? x : x.ToTitleCase())
                             .ToList();
