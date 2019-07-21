@@ -28,7 +28,7 @@ namespace GuideTest.Controllers
         [HttpGet]
         public IActionResult GetAuthorsHistory()
         {
-            return Ok(_service.GetAuthors().ToList());
+            return Ok(_service.GetAuthors().Reverse().Take(10).ToList());
         }
 
         [HttpDelete("{id}")]
