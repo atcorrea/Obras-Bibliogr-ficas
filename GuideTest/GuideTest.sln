@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuideTest", "GuideTest\GuideTest.csproj", "{0F2CE37D-89EA-4385-A1D3-4136BB20DB2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuideTest", "GuideTestAPI\GuideTest.csproj", "{0F2CE37D-89EA-4385-A1D3-4136BB20DB2F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiteTestUnitTests", "GuiteTestUnitTests\GuiteTestUnitTests.csproj", "{A839B55C-3E47-4ABF-9229-C0A6BB2F9DC9}"
 EndProject

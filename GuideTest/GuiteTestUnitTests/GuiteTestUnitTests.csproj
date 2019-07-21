@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GuideTest\GuideTest.csproj" />
+    <ProjectReference Include="..\GuideTestAPI\GuideTest.csproj" />
   </ItemGroup>
 
 </Project>

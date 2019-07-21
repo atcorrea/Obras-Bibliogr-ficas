@@ -1,7 +1,6 @@
 ﻿using GuideTest.DTOs;
 using GuideTest.Interfaces;
 using GuideTest.Models;
-using GuideTest.Utils;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
@@ -21,7 +20,12 @@ namespace GuideTest.Controllers
         [HttpPost]
         public IActionResult FormatAuthorName([FromBody] AuthorRequestDto nameInfo)
         {
-            var formattedName = AbntFormatter.FormatName(nameInfo.NameString, nameInfo.NameCount);
+            var newAuthorHistory = new Author()
+            {
+                NameString = nameInfo.NameString
+            };
+            var formattedName = Author.FormatName(nameInfo.NameString, nameInfo.NameCount);
+
             return Ok(RegisterNewAuthorInHistory(nameInfo, formattedName));
         }
 
