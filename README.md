@@ -4,6 +4,7 @@
 - .NET Core 2.1:
     - Testes unitários utilizando XUnit com auxílio da lib FluentAssertions.
     - ORM utilizando Entity Framework Core.
+    - NLog para logs
 - SQLite
 - Angular 6
     - npm e bower para instalação de dependências.
