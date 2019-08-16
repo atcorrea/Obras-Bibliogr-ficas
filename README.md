@@ -1,4 +1,4 @@
-# Teste: Transformando nome em ABNT
+# Transformando nome em ABNT
 
 ## Tecnologias utilzadas:
 - .NET Core 2.1:
@@ -8,16 +8,14 @@
 - Angular 6
     - npm e bower para instalação de dependências.
     - utilizado bootstrap para estilização.
+- Docker Compose
 
 ## Pré-Requistos:
 - Node js
 - .NET Core SDK
+- Docker Compose
 
 ## Execução:
-    - Abra uma instância de terminal de linha de comando
-    - Navegue até o diretório onde o .net está localizado: atráves do comando ['cd ./GuideTest/GuideTestAPI']
-    - Execute o comando ['dotnet run']
-    - Abra uma nova instância de terminal de linha de comando
-    - Navegue até o diretório onde o Angular foi instalado: através do comando ['cd ./GuideTestSPA/src/app']
-    - Execute o comando ['ng serve']
-    - Abra o navegador no endereço 'http://localhost:4200'
+- Navegue até o diretório GuideTest
+- Execute o comando **docker-compose up**
+- No navegador, acesse **http://localhost:4200**
