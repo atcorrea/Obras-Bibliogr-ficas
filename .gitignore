@@ -1,7 +1,0 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/.vs
-GuideTest/.vs/config/applicationhost.config
-GuideTest/.vs/GuideTest/v15/.suo
